@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="catalogue-page">
+
+    <!-- PAGE INTRO -->
+    <div class="catalogue-header">
+
+        <span class="eyebrow">FROM OUR STORE</span>
+
+        <h1>
+            Everyday essentials,
+            <span>all in one place.</span>
+        </h1>
+
+        <p>
+            Explore some of the products available at
+            Balaji Kirana Store. Availability may change
+            throughout the day.
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+    {% if products %}
+
+        <div class="product-grid">
+
+            {% for product in products %}
+
+                <article
+                    class="product-card {% if not product.available %}is-unavailable{% endif %}"
+                >
+
+                    <!-- IMAGE -->
+                    <div class="product-image">
+
+                        {% if product.image %}
+
+                            <img
+                                src="{{ product.image.url }}"
+                                alt="{{ product.name }}"
+                            >
+
+                        {% else %}
+
+                            <div class="product-image-placeholder">
+                                <span>Product Image</span>
+                            </div>
+
+                        {% endif %}
+
+
+                        <!-- CATEGORY -->
+                        <span class="product-category">
+                            {{ product.get_category_display }}
+                        </span>
+
+                    </div>
+
+
+                    <!-- CONTENT -->
+                    <div class="product-content">
+
+                        <h3>
+                            {{ product.name }}
+                        </h3>
+
+
+                        {% if product.description %}
+
+                            <p>
+                                {{ product.description }}
+                            </p>
+
+                        {% endif %}
+
+
+                        <!-- PRICE + AVAILABILITY -->
+                        <div class="product-bottom">
+
+                            <strong>
+                                ₹{{ product.price }}
+                            </strong>
+
+
+                            {% if product.available %}
+
+                                <span class="available">
+                                    Available
+                                </span>
+
+                            {% else %}
+
+                                <span class="unavailable">
+                                    Unavailable
+                                </span>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <!-- EMPTY STATE -->
+        <div class="empty-products catalogue-empty">
+
+            <span class="eyebrow">
+                CATALOGUE
+            </span>
+
+            <h2>
+                Our catalogue is being updated.
+            </h2>
+
+            <p>
+                Check back soon to see what's available
+                at Balaji Kirana Store.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+
+    <!-- BOTTOM CTA -->
+    <div class="catalogue-cta">
+
+        <div>
+
+            <span class="eyebrow">
+                CAN'T FIND SOMETHING?
+            </span>
+
+            <h2>
+                Just give us a call.
+            </h2>
+
+            <p>
+                If you're looking for something specific,
+                feel free to contact us and we'll be happy
+                to help.
+            </p>
+
+        </div>
+
+
+        <a
+            href="tel:9752430891"
+            class="button button-primary"
+        >
+            Call Us <span>↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

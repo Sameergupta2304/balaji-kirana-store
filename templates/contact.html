@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact | {{ shop_name }}
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-page">
+
+    <!-- INTRO -->
+
+    <div class="contact-heading">
+
+        <span class="eyebrow">
+            VISIT US
+        </span>
+
+        <h1>
+            We'd love to
+            <span>see you.</span>
+        </h1>
+
+        <p>
+            Stop by Balaji Kirana Store for
+            your everyday essentials, or
+            get in touch with us before you visit.
+        </p>
+
+    </div>
+
+
+    <!-- CONTACT OPTIONS -->
+
+    <div class="contact-grid">
+
+
+        <!-- CALL -->
+
+        <a
+            href="tel:9752430891"
+            class="contact-card"
+        >
+
+            <span class="contact-icon">
+                ☎
+            </span>
+
+            <span class="eyebrow">
+                CALL US
+            </span>
+
+            <h2>
+                {{ phone }}
+            </h2>
+
+            <span class="contact-action">
+                Give us a call
+                <span>↗</span>
+            </span>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/919752430891"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+        >
+
+            <span class="contact-icon">
+                ◉
+            </span>
+
+            <span class="eyebrow">
+                WHATSAPP
+            </span>
+
+            <h2>
+                {{ whatsapp }}
+            </h2>
+
+            <span class="contact-action">
+                Chat with us
+                <span>↗</span>
+            </span>
+
+        </a>
+
+
+        <!-- HOURS -->
+
+        <div class="contact-card">
+
+            <span class="contact-icon">
+                ◷
+            </span>
+
+            <span class="eyebrow">
+                OPENING HOURS
+            </span>
+
+            <h2>
+                {{ opening_time }}
+                —
+                {{ closing_time }}
+            </h2>
+
+            <p class="contact-note">
+                Open every day of the week.
+            </p>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <a
+            href="{{ google_maps_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+        >
+
+            <span class="contact-icon">
+                ⌖
+            </span>
+
+            <span class="eyebrow">
+                LOCATION
+            </span>
+
+            <h2>
+                Find Our Shop
+            </h2>
+
+            <span class="contact-action">
+                Open in Google Maps
+                <span>↗</span>
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION CTA -->
+
+<section class="map-placeholder-section">
+
+    <div class="map-placeholder">
+
+        <div class="map-content">
+
+            <span class="map-pin">
+                📍
+            </span>
+
+            <span class="eyebrow">
+                COME VISIT US
+            </span>
+
+            <h2>
+                Balaji Kirana Store
+            </h2>
+
+            <p>
+                Your neighbourhood store for
+                everyday essentials.
+            </p>
+
+            <a
+                href="{{ google_maps_url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-primary"
+            >
+                Get Directions <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

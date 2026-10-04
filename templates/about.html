@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="about-page">
+
+    <!-- INTRO -->
+
+    <div class="about-page-intro">
+
+        <span class="eyebrow">
+            ABOUT BALAJI
+        </span>
+
+        <h1>
+            Your neighbourhood store,
+            <span>close to home.</span>
+        </h1>
+
+        <p>
+            Everyday essentials, familiar faces and
+            the convenience of having what you need
+            right around the corner.
+        </p>
+
+    </div>
+
+
+    <!-- MAIN STORY -->
+
+    <div class="about-page-story">
+
+        <div class="about-page-image">
+
+            <img
+        src="{% static 'images/main-img.png' %}"
+        alt="Balaji Kirana Store"
+        class="about-image-photo"
+    >
+
+        </div>
+
+
+        <div class="about-page-copy">
+
+            <span class="eyebrow">
+                OUR STORY
+            </span>
+
+            <h2>
+                Simple shopping,
+                <span>the local way.</span>
+            </h2>
+
+            <p>
+                Balaji Kirana Store is a local neighbourhood
+                store built around the simple things that make
+                everyday shopping easier.
+            </p>
+
+            <p>
+                From groceries and snacks to beverages and
+                household essentials, we keep the things you
+                need close to home.
+            </p>
+
+            <p>
+                Whether you're stopping by for one quick item
+                or picking up your everyday essentials, our
+                goal is simple — make your shopping convenient,
+                familiar and hassle-free.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- STORE DETAILS -->
+
+    <div class="about-page-details">
+
+        <div class="about-detail">
+
+            <span class="eyebrow">
+                OPENING HOURS
+            </span>
+
+            <h3>
+                7:00 AM
+            </h3>
+
+            <p>
+                Every day
+            </p>
+
+        </div>
+
+
+        <div class="about-detail-divider"></div>
+
+
+        <div class="about-detail">
+
+            <span class="eyebrow">
+                CLOSING HOURS
+            </span>
+
+            <h3>
+                9:00 PM
+            </h3>
+
+            <p>
+                Every day
+            </p>
+
+        </div>
+
+
+        <div class="about-detail-divider"></div>
+
+
+        <div class="about-detail">
+
+            <span class="eyebrow">
+                WHAT WE OFFER
+            </span>
+
+            <h3>
+                Everyday essentials
+            </h3>
+
+            <p>
+                Groceries · Snacks · Beverages · Household
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLOSING -->
+
+    <div class="about-page-closing">
+
+        <span class="eyebrow">
+            A LOCAL STORE
+        </span>
+
+        <h2>
+            Everything you need,
+            <span>right around the corner.</span>
+        </h2>
+
+        <a
+            href="{% url 'contact' %}"
+            class="button button-primary"
+        >
+            Visit Us <span>↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

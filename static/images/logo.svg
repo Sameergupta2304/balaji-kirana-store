@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Balaji Kirana Store icon</title>
+  <desc id="desc">Minimal botanical B monogram with a subtle Indian tilak accent.</desc>
+
+  <!-- Monogram -->
+  <path fill="#31513F" d="M112 76h132c72 0 118 36 118 96 0 39-22 68-59 82 50 12 77 43 77 94 0 76-57 111-145 111H112v-47h35V123h-35V76Zm88 47v111h28c34 0 54-20 54-56 0-37-21-55-59-55h-23Zm0 158v130h34c46 0 69-21 69-65 0-43-24-65-72-65h-31Z"/>
+
+  <!-- Botanical stem -->
+  <path d="M193 425c3-116 34-184 91-247"
+        fill="none"
+        stroke="#31513F"
+        stroke-width="18"
+        stroke-linecap="round"/>
+
+  <!-- Leaves -->
+  <path fill="#47765B" d="M190 377c-55-7-98-44-116-99 55 2 96 27 116 72v27Z"/>
+  <path fill="#47765B" d="M197 307c-46-22-69-62-67-108 48 14 76 46 81 93l-14 15Z"/>
+
+  <!-- Subtle tilak -->
+  <path fill="#B98532" d="M216 130c-13 28-19 48-19 63 0 18 10 28 24 28s24-10 24-28c0-15-10-36-29-63Z"/>
+</svg>

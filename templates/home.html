@@ -1,0 +1,375 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ shop_name }} | Your Neighbourhood Store
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            YOUR LOCAL EVERYDAY STORE
+        </span>
+
+        <h1>
+            Everything you need,
+            <span>right around the corner.</span>
+        </h1>
+
+        <p class="hero-description">
+            Welcome to Balaji Kirana Store —
+            your trusted neighbourhood shop for
+            everyday groceries, snacks, beverages
+            and household essentials.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#products" class="button button-primary">
+                Explore Products
+                <span>→</span>
+            </a>
+
+            <a href="{% url 'contact' %}" class="button button-secondary">
+                Visit Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO IMAGE -->
+
+    <div class="hero-visual">
+
+        <div class="hero-visual">
+
+    <img
+        src="{% static 'images/hero-img.png' %}"
+        alt="Balaji Kirana Store"
+        class="hero-image"
+    >
+
+</div>
+
+    </div>
+
+
+    <!-- HERO DETAILS -->
+
+    <div class="hero-details">
+
+        <div>
+
+            <span class="detail-icon">
+                ◷
+            </span>
+
+            <div>
+                <strong>Open Daily</strong>
+                <small>7 AM — 9 PM</small>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <span class="detail-icon">
+                ✦
+            </span>
+
+            <div>
+                <strong>Neighbourhood Store</strong>
+                <small>Everyday essentials</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">
+                WHAT WE OFFER
+            </span>
+
+            <h2>
+                Everyday essentials,
+                made simple.
+            </h2>
+        </div>
+
+        <p>
+            From your morning essentials to
+            everyday household needs,
+            we've got you covered.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <span>🥫</span>
+            <h3>Groceries</h3>
+            <p>Daily kitchen essentials</p>
+        </div>
+
+
+        <div class="category-card">
+            <span>🍪</span>
+            <h3>Snacks</h3>
+            <p>Biscuits & munchies</p>
+        </div>
+
+
+        <div class="category-card">
+            <span>🥤</span>
+            <h3>Beverages</h3>
+            <p>Drinks for every occasion</p>
+        </div>
+
+
+        <div class="category-card">
+            <span>🧴</span>
+            <h3>Personal Care</h3>
+            <p>Everyday care essentials</p>
+        </div>
+
+
+        <div class="category-card">
+            <span>🧹</span>
+            <h3>Household</h3>
+            <p>Things your home needs</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section section" id="products">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                FROM OUR STORE
+            </span>
+
+            <h2>
+                Popular products.
+            </h2>
+
+        </div>
+
+
+        <a href="{% url 'products' %}" class="text-link">
+            View all products →
+        </a>
+
+    </div>
+
+
+    {% if products %}
+
+    <div class="product-grid">
+
+        {% for product in products %}
+
+        <article class="product-card {% if not product.available %}is-unavailable{% endif %}">
+
+    <div class="product-image">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+            <div class="product-image-placeholder">
+                <span>Product Image</span>
+            </div>
+        {% endif %}
+
+        <span class="product-category">
+            {{ product.get_category_display }}
+        </span>
+    </div>
+
+    <div class="product-content">
+
+        <h3>{{ product.name }}</h3>
+
+        {% if product.description %}
+            <p>{{ product.description }}</p>
+        {% endif %}
+
+        <div class="product-bottom">
+            <strong>₹{{ product.price }}</strong>
+
+            {% if product.available %}
+                <span class="available">Available</span>
+            {% else %}
+                <span class="unavailable">Unavailable</span>
+            {% endif %}
+        </div>
+
+    </div>
+
+</article>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <div class="empty-products">
+
+        <h3>
+            Products coming soon.
+        </h3>
+
+        <p>
+            We're updating our product catalogue.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section section" id="about">
+
+    <div class="about-image">
+
+        <!-- Add shop interior/photo later -->
+
+        <img
+        src="{% static 'images/main-img.png' %}"
+        alt="Balaji Kirana Store"
+        class="hero-image"
+    >
+
+    </div>
+
+
+    <div class="about-content">
+
+        <span class="eyebrow">
+            ABOUT BALAJI
+        </span>
+
+
+        <h2>
+            A small shop,
+            <span>close to home.</span>
+        </h2>
+
+
+        <p>
+            Balaji Kirana Store is your local
+            neighbourhood store for the things
+            you need every day.
+        </p>
+
+
+        <p>
+            Whether you're picking up groceries,
+            grabbing a quick snack or looking
+            for a household essential, we're here
+            to make your everyday shopping simple
+            and convenient.
+        </p>
+
+
+        <div class="about-highlight">
+
+            <span>07:00 AM</span>
+
+            <div></div>
+
+            <span>09:00 PM</span>
+
+        </div>
+
+
+        <p class="open-text">
+            Open every day of the week.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT CTA ================= -->
+
+<section class="contact-cta">
+
+    <div>
+
+        <span class="eyebrow">
+            COME SAY HELLO
+        </span>
+
+        <h2>
+            Need something?
+            We're nearby.
+        </h2>
+
+        <p>
+            Visit Balaji Kirana Store or
+            give us a call.
+        </p>
+
+    </div>
+
+
+    <div class="cta-actions">
+
+        <a href="tel:9752430891" class="button button-light">
+            Call 97524 30891
+            <span>↗</span>
+        </a>
+
+
+        <a href="https://wa.me/919752430891" target="_blank" rel="noopener noreferrer"
+            class="button button-outline-light">
+            WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
