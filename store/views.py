@@ -17,7 +17,7 @@ def shop_info():
 def home(request):
     products = Product.objects.filter(
         is_featured=True
-    )[:6]
+    )[:3]
 
     context = {
         'products': products,

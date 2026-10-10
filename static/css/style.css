@@ -2479,6 +2479,13 @@ a.contact-card {
 
     object-fit: contain;
 }
+
+
+.products-view-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
 /* =========================================================
    ANIMATIONS
 ========================================================= */
