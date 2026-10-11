@@ -10,7 +10,7 @@ def shop_info():
         'opening_time': '7:00 AM',
         'closing_time': '9:00 PM',
         'weekly_holiday': 'Open Daily',
-        'google_maps_url': 'https://maps.app.goo.gl/E84BkyP67rjcjjfXA',
+        'google_maps_url': 'https://maps.app.goo.gl/ro5fuSYWugjxW5hb7',
     }
 
 
